@@ -38,10 +38,10 @@ def on_message(client, userdata, msg):
         print('Max value : ' + ls[-1])
         if(float(ls[-1]) > threshold):
             print("Fireeeee!!!")
-            client.publish('isFire',payload='fire',qos=0)
+            client.publish('@msg/amg',payload='fire',qos=0)
             alarm = True
         else:
-            client.publish('isFire',payload='no fire',qos=0)
+            client.publish('@msg/amg',payload='no fire',qos=0)
         ls.clear()
 
 
